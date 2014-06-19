@@ -70,6 +70,7 @@ class Server(object):
         self.paste_conf_base = None
         self.exec_env = None
         self.deployment_flavor = ''
+        self.convert_image_to_raw = False
         self.show_image_direct_url = False
         self.show_multiple_locations = False
         self.property_protection_file = ''
@@ -328,6 +329,7 @@ class ApiServer(Server):
         self.store_type_location_strategy_preference = ""
 
         self.conf_base = """[DEFAULT]
+convert_image_to_raw = %(convert_image_to_raw)s
 verbose = %(verbose)s
 debug = %(debug)s
 default_log_levels = eventlet.wsgi.server=DEBUG
